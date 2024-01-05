@@ -5,6 +5,9 @@
   gap: 20px;
 }
 .flex-container {
+  position: absolute;
+  top: 100px;
+  right: 50px;
     left: "100px";
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +28,8 @@
     /* width: 100px; */
     width:  80px;
     height: 80px;
-    margin: 5px;
+    margin-top: 10px;
+    margin-left: 30px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
@@ -38,7 +42,8 @@
     background-color: #F43F42;
     width:  80px;
     height: 80px;
-    margin: 5px;
+    margin-top: 10px;
+    margin-left: 30px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
@@ -48,27 +53,39 @@
   
   .word{
     color: #FFF;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:bebas;
     font-size: 27.798px;
     font-style: normal;
     font-weight: 1000;
     line-height: normal;
   }
+  .word_indicator{
+    color: #3E9846;
+    font-family:lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight:1000;
+    margin-left: -10px;
+    line-height: normal;
+    
+  }
   .sel_indicator{
     background-color: #F43F42;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
+    width: 30px;
+    height: 30px;
+    margin-top: 9px;
+    margin-left:30px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
     border-radius: 6px;
+  
   }
   .un_indicator{
     background-color: #DABC58;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
+    width: 30px;
+    margin-top: 9px;
+    height: 30px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;

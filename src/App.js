@@ -31,28 +31,36 @@ const App=()=>{
   };
   return (
     <div>
-    { !open &&  <div >
+    { !open &&  
+    <div >
+      <div style={{
+        backgroundColor:"white"
+      }}>
       <div style={{
         position:"absolute",
-        top:"7%",
+        top:"4%",
         right:"2%",
-        color:"white"
+        fontFamily:"lato",
+        fontWeight:"1000",
+        color:"#3E9846"
       }}>Powered by Lersha Dev team</div>
       <div className="flex-indicator">
            <div className="sel_indicator" 
             >
             </div>
-            <p className='word' >Selected</p>
+            <p className='word_indicator' >Selected</p>
             <div className="un_indicator" >
             </div>
-            <p className='word'>Not selected</p>
+            <p className='word_indicator'>Not selected</p>
       </div>
       <hr style={{
         color:"#DABC58",
         width:"90%",
-        height: "6.426px",
+        height: "3.426px",
+        marginTop:"0px",
         flexShrink: "0"
       }} />
+      </div>
     <div className="flex-container">
         {
         
@@ -67,7 +75,7 @@ const App=()=>{
                  <img src={LershaLogo} style={{
                     width:"50px",
                     height:"50px",
-                    marginTop:"10px",
+                    marginTop:"14px",
                     alignSelf:"center",
                     justifySelf:"center"
                  }} width={"50px"} height={"50px"} alt="Lersha"/>:
