@@ -9,7 +9,7 @@ import kuku from "./images/jump-character.png";
 import Confetti from "./confetti/Confetti";
 /* Gift Images */
 
-import Banana from "./images/gifts/Banana.png";
+import Banana from "./images/gifts/banana.png";
 import BicPen from "./images/gifts/BicPen.png";
 import Chocolate from "./images/gifts/Chocolate.png";
 import abuwalad from "./images/gifts/abuwalad.png";
