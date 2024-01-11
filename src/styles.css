@@ -1,12 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow:auto;
   background-image:url("./images/background2.png");
-  background-color: rgb(23, 145, 23);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* background-color: rgb(23, 145, 23); */
+ width: 100vh;
+ height: auto;
 }
 
 .App {

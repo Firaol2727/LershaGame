@@ -81,6 +81,7 @@
     border-radius: 6px;
   
   }
+
   .un_indicator{
     background-color: #DABC58;
     width: 30px;
@@ -90,4 +91,15 @@
     line-height: 75px;
     font-size: 30px;
     border-radius: 6px;
+  }
+  @media only screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens here */
+  
+    /* Example: Reduce font size for better readability on smaller screens */
+  .powered{
+      display:none;
+
+    }
+
+    /* You can add more specific styles for smaller screens as needed */
   }

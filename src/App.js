@@ -34,11 +34,15 @@ const App=()=>{
     { !open &&  
     <div >
       <div style={{
-        backgroundColor:"white"
-      }}>
-      <div style={{
+        backgroundColor:"white",
         position:"absolute",
-        top:"4%",
+        width:"96%",
+      left:"2%",
+      top:"2%"
+      }}>
+      <div className='powered' style={{
+        position:"absolute",
+        top:"30%",
         right:"2%",
         fontFamily:"lato",
         fontWeight:"1000",
