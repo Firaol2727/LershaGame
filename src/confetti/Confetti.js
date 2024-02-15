@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import "./confetti.scss";
 
-let count = 200;
+let count = 800;
 let points = [];
 
 function Confetti({ open }) {

@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useRef,useEffect } from "react";
 import "./styles.css";
 
 import box from "./images/box.png";
@@ -6,10 +6,10 @@ import santa2 from "./images/santa2.png"
 import boxLid from "./images/box-lid.png";
 import kuku from "./images/jump-character.png";
 // import ConfettiGenerator from "./CanvasConfetti";
-import Confetti from "./confetti/Confetti";
+import Confetti from "./confetti/Confetti";  
 /* Gift Images */
 
-import Banana from "./images/gifts/Banana.png";
+import Banana from "./images/gifts/banana.png";
 import BicPen from "./images/gifts/BicPen.png";
 import Chocolate from "./images/gifts/Chocolate.png";
 import abuwalad from "./images/gifts/abuwalad.png";
@@ -30,7 +30,8 @@ import sugar from "./images/gifts/sugar.png";
 import chornakie from "./images/gifts/chornakie.png";
 // import {  } from "./images/gifts/Banana.png";
 import nogift from "./images/gifts/nogift.png"
-
+import winsound from "./audio/win_audio.wav";
+import lossound from "./audio/oo.wav";
 
 const init_state = {
   move: "move",
@@ -46,6 +47,13 @@ export default function GiftBoxAnimation(props) {
     "G16","G17","G18","G19","G20",
     "",
   ]
+  const audioref=useRef(null);
+
+  const handleClose=()=>{
+    audioref.current.pause();
+    audioref.current.currentTime=0;
+    onClose();
+  }
   const {onClose,selectedValue}=props;
   const [state, setState] = useReducer(
     (state, new_state) => ({
@@ -55,19 +63,32 @@ export default function GiftBoxAnimation(props) {
     init_state
   );
   setTimeout(() => {
+    if(audioref.current){
+      audioref.current.play()
+    }
+    
     animate()
-  }, 3000);
+    
+    
+  }, 4000);
 
   const { move, rotating, rotated, jump } = state;
+ 
 
+  
   function animate() {
+    
+   
     let isDone = false
     // rotated === "rotated" ? true : false;
 
-    if (!isDone) {
+    if (!isDone) 
+    {
       setState({ rotating: "rotating" });
       setTimeout(() => {
         setState({ jump: "jump" });
+     
+
       }, 300);
       setTimeout(() => {
         setState({ rotated: "rotated" });
@@ -81,7 +102,7 @@ export default function GiftBoxAnimation(props) {
 
   return (
     <div className="App">
-      <Confetti open={jump === "jump"} />
+      {(selectedValue!="") &&<Confetti open={jump === "jump"} />}
       <div className="img-container">
           {(selectedValue=="") && <img className={`kuku ${jump}`} width={"120px"} height={"120px"}  src={nogift} alt="kuku" />} 
           {(selectedValue=="G1") && <img className={`kuku ${jump}`} width={"120px"} height={"120px"}  src={BicPen} alt="kuku" />}
@@ -132,8 +153,31 @@ export default function GiftBoxAnimation(props) {
         borderRadius:"60px",
         borderColor:"white"
       }} onClick={()=>{
-        onClose()
+        handleClose()
       }}>x</button>
+      { selectedValue==""?
+            <audio style={{
+            
+            display: "none"
+          
+        }} src= {lossound} ref={audioref} typeof="audio/wav"controls>
+      Your browser does not support the audio element.
+          </audio> :
+          <audio style={{
+                  
+                  display: "none"
+                
+              }} src= {winsound} ref={audioref} typeof="audio/wav"controls>
+            Your browser does not support the audio element.
+          </audio>
+      }
+        {/* <audio style={{
+            
+            display: "none"
+          
+        }} src= {winsound} ref={audioref} typeof="audio/wav"controls>
+      Your browser does not support the audio element.
+    </audio> */}
     </div>
   );
 }
